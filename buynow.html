@@ -1,0 +1,1358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oxford Sofa - Premium Furniture</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<link rel="stylesheet" href="stylenav.css">
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f4;
+ 
+
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.announcement-text {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: max-content;
+  animation: scrollText 24s linear infinite;
+  list-style: none;
+  gap: 50px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+}
+
+.wedding-sale-logo {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.wedding-sale-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item .text {
+  font-size: 0.8rem;
+}
+
+.nav-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.cart-amount {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-top: 2px solid #ffffff;
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.secondary-nav a:hover {
+  background-color: #333;
+  animation: shake 0.1s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  background-color: #000000;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .wedding-sale-logo {
+    margin: 0 10px;
+    padding: 8px 15px;
+  }
+  
+  .secondary-nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .search-bar {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+  
+  .search-bar.active {
+    display: block;
+  }
+  
+  .wedding-sale-logo {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .nav-right.active {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+  
+  .secondary-nav {
+    display: none;
+  }
+  
+  .secondary-nav.active {
+    display: block;
+  }
+  
+  .secondary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .announcement-text {
+    gap: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item .text {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+  }
+}
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            margin-top: 30px;
+        }
+        
+        /* Header Styles */
+        /* header {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: #000000;
+        } */
+
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.cart-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #e74c3c;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.7rem;
+}
+
+
+.product-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.product-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3 {
+    padding: 0.8rem 1rem 0;
+    font-size: 1.2rem;
+}
+
+.product-card .price {
+    padding: 0 1rem;
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff1900;
+}
+
+.product-card .description {
+    padding: 0.5rem 1rem 1.5rem;
+    color: #666;
+}
+
+.buy-now-btn {
+    display: block;
+    width: calc(100% - 2rem);
+    margin: 0 1rem 1.5rem;
+    padding: 0.8rem;
+    background-color:blanchedalmond;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.buy-now-btn:hover {
+    background-color: #500303;
+}
+
+
+/* Checkout Modal Styles */
+.checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: rgb(219, 216, 216);
+    margin: 2rem auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+/* Checkout Form Styles */
+.checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.checkout-form h3 {
+    grid-column: span 2;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.form-group.full-width {
+    grid-column: span 2;
+}
+
+.payment-methods {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.payment-method {
+    flex: 1;
+    text-align: center;
+}
+
+.payment-method input {
+    display: none;
+}
+
+.payment-method label {
+    display: block;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-method input:checked + label {
+    border-color: #2c3e50;
+    background-color: #f8f9fa;
+}
+
+.order-summary {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+}
+
+.order-summary h3 {
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    margin: 1rem 0;
+}
+
+.order-total {
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #ddd;
+}
+
+.place-order-btn {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background-color:#27ae60;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1.5rem;
+    transition: background-color 0.3s;
+}
+
+.place-order-btn:hover {
+background-color: #27ae60;  
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+    
+    .form-group.full-width {
+        grid-column: span 1;
+    }
+    
+    header {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
+    }
+    
+    .product-cards {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+<body>
+    <header>
+       <!-- Top Announcement Bar -->
+     <div class="announcement-bar">
+        <ul class="announcement-text">
+          <li>Shop New Arrivals for Exclusive Designs</li>
+          <li>Explore Sale Items - Limited Time Only!</li>
+          <li>Free Shipping On Orders Above PKR 3 Million</li>
+          <li>Shop Celebrity Favorites</li>
+        </ul>
+      </div>
+    
+      <!-- Main Navigation -->
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="logo">
+          <h2>OXFORD SOFA'S</h2>
+          <button class="mobile-menu-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+        </div>
+    
+        <!-- Search Bar -->
+        <div class="search-bar">
+          <input type="text" placeholder="Search sofas...">
+          <button type="submit"><i class="fas fa-search"></i></button>
+        </div>
+    
+        <!-- Wedding Sale Banner -->
+        <div class="wedding-sale-logo">
+          Wedding Sale 
+        </div>
+    
+        <!-- Navigation Items -->
+        <div class="nav-right">
+          <!-- Reorder -->
+          <div class="nav-item" onclick="goToMyItems()">
+            <i class="fas fa-rotate-left"></i>
+            <div class="text">
+              <small>Reorder</small><br>
+              <span>My Items</span>
+            </div>
+          </div>
+    
+          <!-- Account -->
+          <div class="nav-item">
+            <i class="fas fa-user"></i>
+            <div class="text">
+              <small>Sign In</small><br>
+              <span>My Account</span>
+            </div>
+          </div>
+    
+          <!-- Cart -->
+          <div class="nav-item cart">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+            <div class="cart-amount">₹0</div>
+          </div>
+        </div>
+      </nav>
+    
+      <!-- Secondary Navigation -->
+      <div class="secondary-nav">
+        <ul>
+          <li><a href="home (1) (1) (1).html">Home</a></li>
+          <li><a href="ss (1).html">Shop</a></li>
+          <li><a href="comparison.html">Sofa Comparision</a></li>
+          <li><a href="shipnret.html">Shipping & Return</a></li>
+          <li><a href="main.html">FAQ's</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="SignIn">Sign In</a></li>
+          <li><a href="retsnords.html">Returns & Orders</a></li>
+        </ul>
+      </div>
+    </header>
+    <script>
+      // Mobile Menu Toggle
+  document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+  const searchBar = document.querySelector('.search-bar');
+  const navRight = document.querySelector('.nav-right');
+  const secondaryNav = document.querySelector('.secondary-nav');
+  
+  if (mobileMenuToggle) {
+  mobileMenuToggle.addEventListener('click', function() {
+    // Toggle search bar
+    searchBar.classList.toggle('active');
+    
+    // Toggle nav items
+    navRight.classList.toggle('active');
+    
+    // Toggle secondary nav
+    secondaryNav.classList.toggle('active');
+    
+    // Change icon
+    const icon = this.querySelector('i');
+    if (icon.classList.contains('fa-bars')) {
+      icon.classList.remove('fa-bars');
+      icon.classList.add('fa-times');
+    } else {
+      icon.classList.remove('fa-times');
+      icon.classList.add('fa-bars');
+    }
+  });
+  }
+  
+  // Cart functionality
+  let cartCount = 0;
+  let cartAmount = 0;
+  
+  function addToCart(price) {
+  cartCount++;
+  cartAmount += price;
+  document.querySelector('.cart-count').textContent = cartCount;
+  document.querySelector('.cart-amount').textContent = `₹${cartAmount.toLocaleString()}`;
+  }
+  
+  // Simulate redirect
+  function goToMyItems() {
+  window.location.href = "my-items.html";
+  }
+  });
+    </script>
+    </header>
+
+    <main>
+        <section class="product-cards">
+            <!-- Product Card 1 -->
+            <div class="product-card">
+                <img src="images/main.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.500,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main111.png (1).jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.850,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main333.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.950,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main555.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.550,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main6666.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.458,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main777.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.875,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main333.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.540,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main999.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.650,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/main002.png.jpg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.250,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img src="images/elegance2.jpeg" alt="Oxford Sofa Classic">
+                <h3>Oxford Sofa Classic</h3>
+                <p class="price">Rs.295,000/=</p>
+                <p class="description">Premium leather sofa with classic Oxford design</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Classic" data-price="899.99">Buy Now</button>
+            </div>
+
+            <!-- Product Card 2 -->
+            <div class="product-card">
+                <img src="images/loveseat1.jpg" alt="Oxford Sofa Modern">
+                <h3>Oxford Sofa Modern</h3>
+                <p class="price">Rs.940,000/=</p>
+                <p class="description">Contemporary design with premium fabric</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Modern" data-price="799.99">Buy Now</button>
+            </div>
+
+            <!-- Product Card 3 -->
+            <div class="product-card">
+                <img src="images/main001.png.jpg" alt="Oxford Sofa Luxury">
+                <h3>Oxford Sofa Luxury</h3>
+                <p class="price">Rs.425,000/=</p>
+                <p class="description">Handcrafted luxury sofa with premium materials</p>
+                <button class="buy-now-btn" data-product="Oxford Sofa Luxury" data-price="1299.99">Buy Now</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Checkout Modal (hidden by default) -->
+    <div class="checkout-modal" id="checkoutModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Complete Your Purchase</h2>
+            <div class="checkout-container" id="checkoutContainer">
+                <!-- Content will be loaded here via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+   
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    // Get all Buy Now buttons
+    const buyNowButtons = document.querySelectorAll('.buy-now-btn');
+    const checkoutModal = document.getElementById('checkoutModal');
+    const closeModal = document.querySelector('.close-modal');
+    const checkoutContainer = document.getElementById('checkoutContainer');
+    const cartCount = document.querySelector('.cart-count');
+    
+    let cartItems = [];
+    
+    // Add event listeners to Buy Now buttons
+    buyNowButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productName = this.getAttribute('data-product');
+            const productPrice = this.getAttribute('data-price');
+            
+            // Add to cart
+            addToCart(productName, productPrice);
+            
+            // Open checkout modal
+            openCheckoutModal();
+        });
+    });
+    
+    // Close modal when X is clicked
+    closeModal.addEventListener('click', function() {
+        checkoutModal.style.display = 'none';
+    });
+    
+    // Close modal when clicking outside
+    window.addEventListener('click', function(event) {
+        if (event.target === checkoutModal) {
+            checkoutModal.style.display = 'none';
+        }
+    });
+    
+    // Function to add item to cart
+    function addToCart(name, price) {
+        cartItems.push({
+            name: name,
+            price: parseFloat(price),
+            quantity: 1
+        });
+        
+        updateCartCount();
+    }
+    
+    // Function to update cart count
+    function updateCartCount() {
+        cartCount.textContent = cartItems.length;
+    }
+    
+    // Function to open checkout modal
+    function openCheckoutModal() {
+        // Generate checkout form HTML
+        checkoutContainer.innerHTML = generateCheckoutForm();
+        
+        // Add event listeners to quantity controls
+        const quantityControls = document.querySelectorAll('.quantity-control');
+        quantityControls.forEach(control => {
+            control.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                const action = this.getAttribute('data-action');
+                updateQuantity(index, action);
+            });
+        });
+        
+        // Add event listener to remove buttons
+        const removeButtons = document.querySelectorAll('.remove-item');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const index = this.getAttribute('data-index');
+                removeItem(index);
+            });
+        });
+        
+        // Add event listener to place order button
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        if (placeOrderBtn) {
+            placeOrderBtn.addEventListener('click', placeOrder);
+        }
+        
+        // Show modal
+        checkoutModal.style.display = 'block';
+    }
+    
+    // Function to generate checkout form HTML
+    function generateCheckoutForm() {
+        let itemsHTML = '';
+        let subtotal = 0;
+        
+        cartItems.forEach((item, index) => {
+            const itemTotal = item.price * item.quantity;
+            subtotal += itemTotal;
+            
+            itemsHTML += `
+                <div class="order-item">
+                    <div>
+                        <h4>${item.name}</h4>
+                        <p>$${item.price.toFixed(2)} × ${item.quantity}</p>
+                    </div>
+                    <div>
+                        <span>$${itemTotal.toFixed(2)}</span>
+                        <button class="remove-item" data-index="${index}">
+                            <i class="fas fa-trash"></i>
+                        </button>
+                    </div>
+                    <div class="quantity-controls">
+                        <button class="quantity-control" data-index="${index}" data-action="decrease">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="quantity-control" data-index="${index}" data-action="increase">+</button>
+                    </div>
+                </div>
+            `;
+        });
+        
+        const tax = subtotal * 0.1; // 10% tax
+        const shipping = subtotal > 500 ? 0 : 49.99; // Free shipping over $500
+        const total = subtotal + tax + shipping;
+        
+        return `
+            <div class="checkout-form">
+                <h3>Shipping Information</h3>
+                
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="address">Address</label>
+                    <input type="text" id="address" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <input type="text" id="city" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="state">State/Province</label>
+                    <input type="text" id="state" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="zip">ZIP/Postal Code</label>
+                    <input type="text" id="zip" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" required>
+                        <option value="">Select Country</option>
+                        <option value="US">United States</option>
+                        <option value="UK">United Kingdom</option>
+                        <option value="CA">Canada</option>
+                        <option value="AU">Australia</option>
+                        <option value="PK">Pakistan</option>
+                        <!-- Add more countries as needed -->
+                    </select>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required>
+                </div>
+                
+                <h3>Payment Method</h3>
+                
+                <div class="form-group full-width">
+                    <div class="payment-methods">
+                        <div class="payment-method">
+                            <input type="radio" id="creditCard" name="payment" value="creditCard" checked>
+                            <label for="creditCard">
+                                <i class="fab fa-cc-visa"></i> <i class="fab fa-cc-mastercard"></i>
+                                <div>Credit Card</div>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="paypal" name="payment" value="paypal">
+                            <label for="paypal">
+                                <i class="fab fa-paypal"></i>
+                                <div>PayPal</div>
+                            </label>
+                        </div>
+                        
+                        <div class="payment-method">
+                            <input type="radio" id="bankTransfer" name="payment" value="bankTransfer">
+                            <label for="bankTransfer">
+                                <i class="fas fa-university"></i>
+                                <div>Bank Transfer</div>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Credit Card Fields (shown by default) -->
+                <div class="form-group full-width credit-card-fields">
+                    <label for="cardNumber">Card Number</label>
+                    <input type="text" id="cardNumber" placeholder="1234 5678 9012 3456">
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem;">
+                        <div>
+                            <label for="expiryDate">Expiry Date</label>
+                            <input type="text" id="expiryDate" placeholder="MM/YY">
+                        </div>
+                        <div>
+                            <label for="cvv">CVV</label>
+                            <input type="text" id="cvv" placeholder="123">
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="order-summary">
+                    <h3>Order Summary</h3>
+                    
+                    ${itemsHTML}
+                    
+                    <div class="order-item">
+                        <span>Subtotal</span>
+                        <span>$${subtotal.toFixed(2)}</span>
+                    </div>
+                    
+                    <div class="order-item">
+                        <span>Tax (10%)</span>
+                        <span>$${tax.toFixed(2)}</span>
+                    </div>
+                    
+                    <div class="order-item">
+                        <span>Shipping</span>
+                        <span>${shipping === 0 ? 'FREE' : '$' + shipping.toFixed(2)}</span>
+                    </div>
+                    
+                    <div class="order-total">
+                        <span>Total</span>
+                        <span>$${total.toFixed(2)}</span>
+                    </div>
+                    
+                    <button id="placeOrderBtn" class="place-order-btn">Place Order</button>
+                </div>
+            </div>
+        `;
+    }
+    
+    // Function to update quantity
+    function updateQuantity(index, action) {
+        index = parseInt(index);
+        
+        if (action === 'increase') {
+            cartItems[index].quantity += 1;
+        } else if (action === 'decrease' && cartItems[index].quantity > 1) {
+            cartItems[index].quantity -= 1;
+        }
+        
+        openCheckoutModal(); // Refresh the modal
+    }
+    
+    // Function to remove item
+    function removeItem(index) {
+        index = parseInt(index);
+        cartItems.splice(index, 1);
+        updateCartCount();
+        
+        if (cartItems.length === 0) {
+            checkoutModal.style.display = 'none';
+        } else {
+            openCheckoutModal(); // Refresh the modal
+        }
+    }
+    
+    // Function to place order
+    function placeOrder() {
+        // Here you would normally send the order to your server
+        // For this example, we'll just show an alert
+        
+        alert('Order placed successfully! Thank you for your purchase.');
+        cartItems = [];
+        updateCartCount();
+        checkoutModal.style.display = 'none';
+        
+        // In a real application, you would:
+        // 1. Validate all form fields
+        // 2. Collect all the data
+        // 3. Send to your backend (e.g., via fetch API)
+        // 4. Handle the response (show success/error message)
+        // 5. Maybe redirect to a thank you page
+    }
+    
+    // Payment method toggle (event delegation)
+    document.addEventListener('change', function(e) {
+        if (e.target.name === 'payment') {
+            const creditCardFields = document.querySelector('.credit-card-fields');
+            if (e.target.value === 'creditCard') {
+                creditCardFields.style.display = 'block';
+            } else {
+                creditCardFields.style.display = 'none';
+            }
+        }
+    });
+});
+    </script>
+    <footer>
+        <div class="footer">
+          <div class="top-f">NEWSLETTER
+            <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+            <div class="search-container">
+              <input type="text" class="search-input" placeholder="Search...">
+              <button class="search-btn">Search</button>
+            </div>
+      
+          </div>
+          <div class="controler">
+      
+            <div class="one">
+              <div class="new">INFORMATION</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="about.html">About Oxford Sofa's</a></li>
+                </ul>
+      
+                <ul>
+                  <li><a href="installment-plain.html">Installments Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="checkout.html">Corporate Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="RnR.html">Product & Complaint Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+                </ul>
+      
+                <ul>
+                  <li><a href="blog.html">Blogs</a></li>
+                </ul>
+                <ul>
+                  <li><a href="main.html">FAQs</a></li>
+                </ul>
+                <ul>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+      
+              </div>
+      
+            </div>
+            <div class="one">
+              <div class="new">MY ACCOUNT</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="sign up.html">Create Account</a></li>
+                </ul>
+                <ul>
+                  <li><a href="ss (1).html">View Cart</a></li>
+                </ul>
+                <ul>
+                  <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+                <ul>
+                  <li><a href="map (1).html">Track My Order</a></li>
+                </ul>
+      
+              </div>
+            </div>
+            <div class="one">
+              <div class="new">POLICY</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="RnR.html">Return and Refund Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="delivery.html">Delivery Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+                </ul>
+                <ul>
+                  <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="payment-policy (1).html">Payment Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="installment-plain.html">Installment Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="sofa-policy (1).html">Sofa Care & Warranty Policy</a></li>
+                </ul>
+      
+              </div>
+      
+            </div>
+            <div class="cent">
+              <div class="one">
+      
+                <div class="new">OXFORD SOFA'S</div>
+                <ul></ul>
+                <div class="f-text">
+                  <ul>
+                    <li><a href=""> <img class="insta" src="images/land-location.png" alt=""> OXFORD SOFA'S Head
+                        Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                        </P></a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="">
+                        <img class="insta" src="images/phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+                    </li>
+                  </ul>
+      
+                  <ul>
+                    <li><a href=""><img class="insta" src="images/whatsapp.png" alt=""> : +923217876200</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href=""> <img class="insta" src="images/envelope-dot.png" alt=""> : info@oxfordsofa.pk<P>
+                          :sales@oxfordsofa.pk</P></a></li>
+                  </ul>
+                </div>
+      
+      
+              </div>
+            </div>
+      
+            <!-- <div class="two">MY ACCOUNT</div>
+      <div class="three">POLICY</div>
+      <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+          </div>
+        </div>
+        <div class="last">
+          <div class="oneL">
+            <p>USEFUL SOFA SET CATEGORIES</p>
+          </div>
+          <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories. Whether
+            you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+            recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle. Explore
+            our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+        </div>
+      
+        <div class="last">
+          <div class="threeL">
+            <p>SHOP FURNITURE BY ROOM</p>
+          </div>
+          <div class="fourL">
+            <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room and
+              every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest bedroom,
+              our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+              inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+          </div>
+        </div>
+        <div class="last">
+          <div class="fiveL">
+            <p>OFFICE FURNITURE CATEGORIES
+            </p>
+          </div>
+          <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+            Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+            Sofas , Office Sofa Set , Office Executive Furniture.</div>
+        </div>
+        <div class="last">
+          <div class="sevenL">
+            <p>WARDROBES & KITCHEN DESIGNS</p>
+          </div>
+          <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+            functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of the
+            Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+            finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+        </div>
+        <div class="last">
+          <div class="nineL">
+            <p>DELIVERING IN</p>
+          </div>
+          <div class="tenL">Lahore , Islamabad , Karachi.</div>
+        </div>
+      </footer>
+</body>
+</html>

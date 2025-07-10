@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Policy | Oxford Sofa's</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylenav.css">
+    <style>
+        /* Global Styles */
+        * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f4;
+  background-image: url("main777.png.jpg");
+
+}
+
+a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+/* Announcement Bar */
+.announcement-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.announcement-text {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: max-content;
+  animation: scrollText 24s linear infinite;
+  list-style: none;
+  gap: 50px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+}
+
+.wedding-sale-logo {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.wedding-sale-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item .text {
+  font-size: 0.8rem;
+}
+
+.nav-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.cart-amount {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-top: 2px solid #ffffff;
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.secondary-nav a:hover {
+  background-color: #333;
+  animation: shake 0.1s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  background-color: #000000;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .wedding-sale-logo {
+    margin: 0 10px;
+    padding: 8px 15px;
+  }
+  
+  .secondary-nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .search-bar {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+  
+  .search-bar.active {
+    display: block;
+  }
+  
+  .wedding-sale-logo {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .nav-right.active {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+  
+  .secondary-nav {
+    display: none;
+  }
+  
+  .secondary-nav.active {
+    display: block;
+  }
+  
+  .secondary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .announcement-text {
+    gap: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item .text {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+  }
+}
+        
+        /* Policy Content Styles */
+        .policy-container {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+            padding: 50px;
+            margin-bottom: 60px;
+            margin-left: 70px;
+            margin-right: 70px;
+            margin-top: 50px;
+        }
+        
+        h1 {
+            color: #000000;
+            margin-bottom: 30px;
+            font-size: 32px;
+            text-align: center;
+        }
+        
+        h2 {
+            color: #000000;
+            margin: 25px 0 15px;
+            font-size: 24px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+        
+        h3 {
+            color: #000000;
+            margin: 20px 0 10px;
+            font-size: 20px;
+        }
+        
+        p {
+            margin-bottom: 15px;
+        }
+        
+        ul, ol {
+            margin-bottom: 20px;
+            padding-left: 20px;
+        }
+        
+        li {
+            margin-bottom: 8px;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .payment-method {
+            display: flex;
+            align-items: center;
+            background: #f8f9fa;
+            padding: 10px 15px;
+            border-radius: 6px;
+            min-width: 200px;
+        }
+        
+        .payment-method i {
+            font-size: 24px;
+            margin-right: 10px;
+            color: #000000;
+        }
+        
+        .notice-box {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-left: 4px solid #d32f2f;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .highlight {
+            font-weight: 600;
+            color: #000000;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+        
+        .copyright {
+            font-size: 14px;
+            opacity: 0.8;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 25px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            h2 {
+                font-size: 22px;
+            }
+            
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+            
+            .payment-method {
+                min-width: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .policy-container {
+                padding: 20px 15px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            h2 {
+                font-size: 20px;
+            }
+            
+            .notice-box {
+                padding: 15px;
+            }
+            
+            th, td {
+                padding: 8px;
+                font-size: 14px;
+            }
+            
+            .payment-methods {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <!-- Top Announcement Bar -->
+   <div class="announcement-bar">
+    <ul class="announcement-text">
+      <li>Shop New Arrivals for Exclusive Designs</li>
+      <li>Explore Sale Items - Limited Time Only!</li>
+      <li>Free Shipping On Orders Above PKR 3 Million</li>
+      <li>Shop Celebrity Favorites</li>
+    </ul>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <h2>OXFORD SOFA'S</h2>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search sofas...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Wedding Sale Banner -->
+    <div class="wedding-sale-logo">
+      Wedding Sale 
+    </div>
+
+    <!-- Navigation Items -->
+    <div class="nav-right">
+      <!-- Reorder -->
+      <div class="nav-item" onclick="goToMyItems()">
+        <i class="fas fa-rotate-left"></i>
+        <div class="text">
+          <small>Reorder</small><br>
+          <span>My Items</span>
+        </div>
+      </div>
+
+      <!-- Account -->
+      <div class="nav-item">
+        <i class="fas fa-user"></i>
+        <div class="text">
+          <small>Sign In</small><br>
+          <span>My Account</span>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="nav-item cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-amount">₹0</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+    <ul>
+      <li><a href="home (1) (1) (1).html">Home</a></li>
+      <li><a href="ss (1).html">Shop</a></li>
+      <li><a href="comparison.html">Sofa Comparision</a></li>
+      <li><a href="shipnret.html">Shipping & Return</a></li>
+      <li><a href="main.html">FAQ's</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="sign up.html">Sign In</a></li>
+      <li><a href="retsnords.html">Returns & Orders</a></li>
+    </ul>
+  </div>
+</header>
+<script>
+  // Mobile Menu Toggle
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+const searchBar = document.querySelector('.search-bar');
+const navRight = document.querySelector('.nav-right');
+const secondaryNav = document.querySelector('.secondary-nav');
+
+if (mobileMenuToggle) {
+mobileMenuToggle.addEventListener('click', function() {
+// Toggle search bar
+searchBar.classList.toggle('active');
+
+// Toggle nav items
+navRight.classList.toggle('active');
+
+// Toggle secondary nav
+secondaryNav.classList.toggle('active');
+
+// Change icon
+const icon = this.querySelector('i');
+if (icon.classList.contains('fa-bars')) {
+  icon.classList.remove('fa-bars');
+  icon.classList.add('fa-times');
+} else {
+  icon.classList.remove('fa-times');
+  icon.classList.add('fa-bars');
+}
+});
+}
+
+// Cart functionality
+let cartCount = 0;
+let cartAmount = 0;
+
+function addToCart(price) {
+cartCount++;
+cartAmount += price;
+document.querySelector('.cart-count').textContent = cartCount;
+document.querySelector('.cart-amount').textContent = `₹${cartAmount.toLocaleString()}`;
+}
+
+// Simulate redirect
+function goToMyItems() {
+window.location.href = "my-items.html";
+}
+});
+</script>   
+    
+    <!-- Main Content -->
+    <main class="container">
+        <div class="policy-container">
+            <h1>Payment Policy</h1>
+            
+            <div class="notice-box">
+                <p><strong>Last Updated:</strong> [Insert Date]</p>
+                <p>Oxford Sofa's offers secure and convenient payment options for your furniture purchases. Please review our payment terms before completing your order.</p>
+            </div>
+            
+            <h2>1. Accepted Payment Methods</h2>
+            <p>We accept the following payment methods:</p>
+            
+            <div class="payment-methods">
+                <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Credit Cards</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-credit-card"></i>
+                    <span>Debit Cards</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-university"></i>
+                    <span>Net Banking</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>UPI Payments</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-rupee-sign"></i>
+                    <span>EMI Options</span>
+                </div>
+                <div class="payment-method">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <span>Cash on Delivery*</span>
+                </div>
+            </div>
+            
+            <p><small>*Cash on Delivery available for select products and locations only. Additional charges may apply.</small></p>
+            
+            <h2>2. Payment Security</h2>
+            <p>We prioritize your payment security with:</p>
+            <ul>
+                <li>SSL encrypted transactions</li>
+                <li>PCI DSS compliant payment gateways</li>
+                <li>Tokenization for card payments</li>
+                <li>3D Secure authentication</li>
+                <li>No storage of sensitive payment data on our servers</li>
+            </ul>
+            
+            <h2>3. Payment Terms</h2>
+            <h3>3.1 Standard Orders</h3>
+            <ul>
+                <li>Full payment required at time of purchase</li>
+                <li>Payment verification may take 1-2 business hours</li>
+                <li>Orders processed only after successful payment</li>
+            </ul>
+            
+            <h3>3.2 Custom Orders</h3>
+            <ul>
+                <li>50% advance payment required to begin production</li>
+                <li>Balance payment due before delivery</li>
+                <li>Customization changes after payment may incur additional charges</li>
+            </ul>
+            
+            <h3>3.3 EMI Options</h3>
+            <table>
+                <tr>
+                    <th>Bank</th>
+                    <th>Tenure</th>
+                    <th>Interest Rate</th>
+                    <th>Processing Fee</th>
+                </tr>
+                <tr>
+                    <td>HDFC Bank</td>
+                    <td>3-24 months</td>
+                    <td>14% p.a.</td>
+                    <td>1% of loan amount</td>
+                </tr>
+                <tr>
+                    <td>ICICI Bank</td>
+                    <td>3-18 months</td>
+                    <td>15% p.a.</td>
+                    <td>1.5% of loan amount</td>
+                </tr>
+                <tr>
+                    <td>SBI Card</td>
+                    <td>3-12 months</td>
+                    <td>12% p.a.</td>
+                    <td>1% of loan amount</td>
+                </tr>
+                <tr>
+                    <td>Axis Bank</td>
+                    <td>3-24 months</td>
+                    <td>16% p.a.</td>
+                    <td>1.25% of loan amount</td>
+                </tr>
+            </table>
+            <p><small>*EMI terms subject to bank approval and may change without notice</small></p>
+            
+            <h2>4. Pricing & Currency</h2>
+            <ul>
+                <li>All prices in Indian Rupees (₹)</li>
+                <li>Inclusive of applicable GST</li>
+                <li>Exclusive of delivery charges unless specified</li>
+                <li>Prices subject to change without notice</li>
+                <li>Displayed prices prevail over printed catalogs</li>
+            </ul>
+            
+            <h2>5. Refund Policy</h2>
+            <ul>
+                <li>Refunds processed within 7-10 business days of return approval</li>
+                <li>Issued to original payment method</li>
+                <li>EMI purchases refunded as per bank policies</li>
+                <li>Cash on Delivery refunds via bank transfer</li>
+                <li>See our <a href="/return-policy">Return Policy</a> for details</li>
+            </ul>
+            
+            <h2>6. Failed Transactions</h2>
+            <p>If your payment fails but amount is deducted:</p>
+            <ol>
+                <li>Check with your bank for pending authorization</li>
+                <li>Wait 2-4 hours for automatic reversal</li>
+                <li>Contact us at payments@oxfordsofas.com if amount not reversed within 24 hours</li>
+                <li>Provide transaction details for investigation</li>
+            </ol>
+            
+            <h2>7. Payment Disputes</h2>
+            <p>For any payment-related disputes:</p>
+            <ul>
+                <li>Contact us within 7 days of transaction</li>
+                <li>Provide order and payment details</li>
+                <li>We will investigate and respond within 3 business days</li>
+                <li>Chargebacks without prior communication may result in account suspension</li>
+            </ul>
+            
+            <h2>8. Contact Information</h2>
+            <p>For payment-related inquiries:</p>
+            <ul>
+                <li>Email: payments@oxfordsofas.com</li>
+                <li>Phone: +92-3198442632(10AM-7PM, Mon-Sat)</li>
+                <li>WhatsApp: +92-3198442632</li>
+            </ul>
+        </div>
+    </main>
+    
+    <!-- Footer -->
+    <footer>
+        <div class="footer">
+            <div class="top-f">NEWSLETTER
+              <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+              <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search...">
+                <button class="search-btn">Search</button>
+              </div>
+        
+            </div>
+            <div class="controler">
+        
+              <div class="one">
+                <div class="new">INFORMATION</div>
+                <ul></ul>
+                <div class="f-text">
+                   <ul>
+            <li><a href="about .html">About Oxford Sofa's</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="installment-plain .html">Installments Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Corporate Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="RnR.html">Product & Complaint Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="blog.html">Blogs</a></li>
+          </ul>
+          <ul>
+            <li><a href="main.html">FAQs</a></li>
+          </ul>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="one">
+        <div class="new">MY ACCOUNT</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="sign up.html">Create Account</a></li>
+          </ul>
+          <ul>
+            <li><a href="ss (1).html">View Cart</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+          <ul>
+            <li><a href="map (1).html">Track My Order</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="one">
+        <div class="new">POLICY</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="RnR.html">Return and Refund Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="delivery.html">Delivery Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+          </ul>
+          <ul>
+            <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="payment-policy (1).html">Payment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="installment-plain .html">Installment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="sofa-policy (1).html">Sofa Care & Warranty Policy</a></li>
+          </ul>
+
+
+                </div>
+        
+              </div>
+              <div class="cent">
+                <div class="one">
+        
+                  <div class="new">OXFORD SOFA'S</div>
+                  <ul></ul>
+                  <div class="f-text">
+                    <ul>
+                      <li><a href=""> <img class="insta" src="land-location.png" alt=""> OXFORD SOFA'S Head
+                          Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                          </P></a></li>
+                    </ul>
+                    <ul>
+                      <li><a href="">
+                          <img class="insta" src="phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+                      </li>
+                    </ul>
+        
+                    <ul>
+                      <li><a href=""><img class="insta" src="whatsapp.png" alt=""> : +923217876200</a></li>
+                    </ul>
+                    <ul>
+                      <li><a href=""> <img class="insta" src="envelope-dot.png" alt=""> : info@oxfordsofa.pk<P>
+                            :sales@oxfordsofa.pk</P></a></li>
+                    </ul>
+                  </div>
+        
+        
+                </div>
+              </div>
+        
+              <!-- <div class="two">MY ACCOUNT</div>
+        <div class="three">POLICY</div>
+        <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+            </div>
+          </div>
+          <div class="last">
+            <div class="oneL">
+              <p>USEFUL SOFA SET CATEGORIES</p>
+            </div>
+            <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories. Whether
+              you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+              recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle. Explore
+              our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+          </div>
+        
+          <div class="last">
+            <div class="threeL">
+              <p>SHOP FURNITURE BY ROOM</p>
+            </div>
+            <div class="fourL">
+              <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room and
+                every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest bedroom,
+                our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+                inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+            </div>
+          </div>
+          <div class="last">
+            <div class="fiveL">
+              <p>OFFICE FURNITURE CATEGORIES
+              </p>
+            </div>
+            <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+              Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+              Sofas , Office Sofa Set , Office Executive Furniture.</div>
+          </div>
+          <div class="last">
+            <div class="sevenL">
+              <p>WARDROBES & KITCHEN DESIGNS</p>
+            </div>
+            <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+              functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of the
+              Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+              finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+          </div>
+          <div class="last">
+            <div class="nineL">
+              <p>DELIVERING IN</p>
+            </div>
+            <div class="tenL">Lahore , Islamabad , Karachi.</div>
+          </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylenav.css">
+</head>
+<style>
+   * {
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f4;
+    /* padding: 20px; */
+  }
+  a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+
+  .announcement-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.announcement-text {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: max-content;
+  animation: scrollText 24s linear infinite;
+  list-style: none;
+  gap: 50px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+}
+
+.wedding-sale-logo {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.wedding-sale-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item .text {
+  font-size: 0.8rem;
+}
+
+.nav-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.cart-amount {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-top: 2px solid #ffffff;
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.secondary-nav a:hover {
+  background-color: #333;
+  animation: shake 0.1s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  background-color: #000000;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .wedding-sale-logo {
+    margin: 0 10px;
+    padding: 8px 15px;
+  }
+  
+  .secondary-nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .search-bar {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+  
+  .search-bar.active {
+    display: block;
+  }
+  
+  .wedding-sale-logo {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .nav-right.active {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+  
+  .secondary-nav {
+    display: none;
+  }
+  
+  .secondary-nav.active {
+    display: block;
+  }
+  
+  .secondary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .announcement-text {
+    gap: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item .text {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+  }
+}
+    
+  .map {
+    height: 700px;
+    width: 100%;
+  }
+
+  .navbar ul {
+    display: flex;
+
+    list-style-type: none;
+    padding-top: 20px;
+  }
+
+  .a {
+    text-decoration: none;
+    font-size: 20px;
+    color: blue;
+  }
+
+  .container {
+    font-size: small;
+    color: blue;
+  }
+</style>
+
+<body>
+   <header>
+  <div class="announcement-bar">
+    <ul class="announcement-text">
+      <li>Shop New Arrivals for Exclusive Designs</li>
+      <li>Explore Sale Items - Limited Time Only!</li>
+      <li>Free Shipping On Orders Above PKR 3 Million</li>
+      <li>Shop Celebrity Favorites</li>
+    </ul>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <h2>OXFORD SOFA'S</h2>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search sofas...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Wedding Sale Banner -->
+    <div class="wedding-sale-logo">
+      <a href="buynow.html">Wedding Sale</a> 
+    </div>
+
+    <!-- Navigation Items -->
+    <div class="nav-right">
+      <!-- Reorder -->
+      <div class="nav-item" onclick="goToMyItems()">
+        <i class="fas fa-rotate-left"></i>
+        <div class="text">
+          <small>Reorder</small><br>
+          <span>My Items</span>
+        </div>
+      </div>
+
+      <!-- Account -->
+      <div class="nav-item">
+        <i class="fas fa-user"></i>
+        <div class="text">
+          <small>Sign In</small><br>
+          <span>My Account</span>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="nav-item cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-amount">₹0</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+   <ul>
+      <li><a href="home (1) (1) (1).html">Home</a></li>
+     <li><a href="ss (1).html">Shop</a></li>
+      <li><a href="comparison.html">Sofa Comparision</a></li>
+      <li><a href="shipnret.html">Shipping & Return</a></li>
+      <li><a href="main.html">FAQ's</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="logins.html">login</a></li>
+      <li><a href="retsnords.html">Returns & Orders</a></li>
+    </ul>
+  </div>
+</header>
+    <H1>STORE LOCATOR</H1>
+  <iframe class="map"
+    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d924237.7097540089!2d66.4959539227841!3d25.192983650620572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3eb33e06651d4bbf%3A0x9cf92f44555a0c23!2sKarachi%2C%20Pakistan!5e0!3m2!1sen!2s!4v1750267534297!5m2!1sen!2s"
+    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+    referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <div class="main">
+    <h2>Store Info</h2>
+    <h3>Karachi</h3>
+    <p>Store 1 - Tipu Sultan Road, Shahra-e-Faisal Rd, Memon Co-operative Housing Society Karachi<br>
+      Email: info@OXFORD SOFA'S.com<br>
+      Phone: 03485739201 - 03327879341<br>
+      Opening Hours:<br>
+      Monday to Sunday: 11am - 10pm<br>
+
+      Store 2 -  D.H.A. Phase 8 Zulfiqar & Al Murtaza Commercial Area Phase 8 Defence Housing
+      Authority, Karachi, Karachi City, Sindh 75300<br>
+      Email: info@OXFORD SOFA'S.com<br>
+
+      Phone: 03018967452 - 03456789210<br>
+      Opening Hours: <br>Monday to Sunday: 11am - 10pm</p>
+  </div>
+   <footer>
+  <div class="footer">
+    <div class="top-f">NEWSLETTER
+      <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-btn">Search</button>
+      </div>
+
+    </div>
+    <div class="controler">
+
+      <div class="one">
+        <div class="new">INFORMATION</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="about.html">About Oxford Sofa's</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="installment-plain.html">Installments Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Corporate Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="RnR.html">Product & Complaint Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="blog.html">Blogs</a></li>
+          </ul>
+          <ul>
+            <li><a href="main.html">FAQs</a></li>
+          </ul>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="one">
+        <div class="new">MY ACCOUNT</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="sign up.html">Create Account</a></li>
+          </ul>
+          <ul>
+            <li><a href="ss (1).html">View Cart</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+          <ul>
+            <li><a href="map (1).html">Track My Order</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="one">
+        <div class="new">POLICY</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="RnR.html">Return and Refund Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="delivery.html">Delivery Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+          </ul>
+          <ul>
+            <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="payment-policy (1).html">Payment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="installment-plain.html">Installment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="sofa-policy (1).html">Sofa Care & Warranty Policy</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="cent">
+        <div class="one">
+
+          <div class="new">OXFORD SOFA'S</div>
+          <ul></ul>
+          <div class="f-text">
+            <ul>
+              <li><a href=""> <img class="insta" src="images/land-location.png" alt=""> OXFORD SOFA'S Head
+                  Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                  </P></a></li>
+            </ul>
+            <ul>
+              <li><a href="">
+                  <img class="insta" src="images/phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li><a href=""><img class="insta" src="images/whatsapp.png" alt=""> : +923217876200</a></li>
+            </ul>
+            <ul>
+              <li><a href=""> <img class="insta" src="images/envelope-dot (1).png" alt=""> : info@oxfordsofa.pk<P>
+                    :sales@oxfordsofa.pk</P></a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- <div class="two">MY ACCOUNT</div>
+<div class="three">POLICY</div>
+<div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+    </div>
+  </div>
+  <div class="last">
+    <div class="oneL">
+      <p>USEFUL SOFA SET CATEGORIES</p>
+    </div>
+    <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories. Whether
+      you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+      recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle. Explore
+      our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+  </div>
+
+  <div class="last">
+    <div class="threeL">
+      <p>SHOP FURNITURE BY ROOM</p>
+    </div>
+    <div class="fourL">
+      <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room and
+        every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest bedroom,
+        our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+        inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+    </div>
+  </div>
+  <div class="last">
+    <div class="fiveL">
+      <p>OFFICE FURNITURE CATEGORIES
+      </p>
+    </div>
+    <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+      Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+      Sofas , Office Sofa Set , Office Executive Furniture.</div>
+  </div>
+  <div class="last">
+    <div class="sevenL">
+      <p>WARDROBES & KITCHEN DESIGNS</p>
+    </div>
+    <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+      functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of the
+      Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+      finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+  </div>
+  <div class="last">
+    <div class="nineL">
+      <p>DELIVERING IN</p>
+    </div>
+    <div class="tenL">Lahore , Islamabad , Karachi.</div>
+  </div>
+</footer>
+  </body>
+  </html>

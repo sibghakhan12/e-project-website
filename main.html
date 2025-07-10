@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="stylenav.css">
+</head>
+<style>
+     * {
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f4;
+    /* padding: 20px; */
+  }
+  a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+
+  .announcement-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.announcement-text {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: max-content;
+  animation: scrollText 24s linear infinite;
+  list-style: none;
+  gap: 50px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+}
+
+.wedding-sale-logo {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.wedding-sale-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item .text {
+  font-size: 0.8rem;
+}
+
+.nav-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.cart-amount {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-top: 2px solid #ffffff;
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.secondary-nav a:hover {
+  background-color: #333;
+  animation: shake 0.1s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  background-color: #000000;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .wedding-sale-logo {
+    margin: 0 10px;
+    padding: 8px 15px;
+  }
+  
+  .secondary-nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .search-bar {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+  
+  .search-bar.active {
+    display: block;
+  }
+  
+  .wedding-sale-logo {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .nav-right.active {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+  
+  .secondary-nav {
+    display: none;
+  }
+  
+  .secondary-nav.active {
+    display: block;
+  }
+  
+  .secondary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .announcement-text {
+    gap: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item .text {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+  }
+}
+</style>
+
+<body>
+     <header>
+  <div class="announcement-bar">
+    <ul class="announcement-text">
+      <li>Shop New Arrivals for Exclusive Designs</li>
+      <li>Explore Sale Items - Limited Time Only!</li>
+      <li>Free Shipping On Orders Above PKR 3 Million</li>
+      <li>Shop Celebrity Favorites</li>
+    </ul>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <h2>OXFORD SOFA'S</h2>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search sofas...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Wedding Sale Banner -->
+    <div class="wedding-sale-logo">
+      <a href="buynow.html">Wedding Sale</a> 
+    </div>
+
+    <!-- Navigation Items -->
+    <div class="nav-right">
+      <!-- Reorder -->
+      <div class="nav-item" onclick="goToMyItems()">
+        <i class="fas fa-rotate-left"></i>
+        <div class="text">
+          <small>Reorder</small><br>
+          <span>My Items</span>
+        </div>
+      </div>
+
+      <!-- Account -->
+      <div class="nav-item">
+        <i class="fas fa-user"></i>
+        <div class="text">
+          <small>Sign In</small><br>
+          <span>My Account</span>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="nav-item cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-amount">₹0</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+   <ul>
+      <li><a href="home (1) (1) (1).html">Home</a></li>
+     <li><a href="ss (1).html">Shop</a></li>
+      <li><a href="comparison.html">Sofa Comparision</a></li>
+      <li><a href="shipnret.html">Shipping & Return</a></li>
+      <li><a href="main.html">FAQ's</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="logins.html">login</a></li>
+      <li><a href="retsnords.html">Returns & Orders</a></li>
+    </ul>
+  </div>
+</header>
+
+
+    <div class="jumbotron-faq jumbotron-fluid mb-5">
+        <div class="jumbotron-text text-center py-5">
+            <h1 class="text-white display-3">FAQ's</h1>
+            <div class="d-inline-flex align-items-center text-white">
+                <p class="m-0"><a class="text-white" href="">Home</a></p>
+                <i class="fa fa-circle px-3"></i>
+                <p class="m-0">FAQ's</p>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="container-fluid py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h1 class="mb-4 text-center">Frequently Asked Questions</h1>
+                </div>
+                <div class="col-lg-12 pb-4 pb-lg-0">
+                    <div class="accordion" id="accordionExample">
+
+                        <div class="card">
+                            <div class="card-header" data-toggle="collapse" data-target="#collapseOne"
+                                aria-expanded="true">
+                                <span class="title">What is OXFORD SOFA'S?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Welcome to OXFORD SOFA'S, your trusted partner in global logistics and
+                                    transportation. Specializing in import, export, and cross-border services, we are
+                                    committed to delivering efficient and reliable shipping solutions tailored to meet
+                                    the needs of businesses worldwide. With strategic partners in China, Hong Kong, the
+                                    USA, and other key locations around the globe, OXFORD SOFA'S leverages a robust
+                                    network to ensure seamless and cost-effective logistics management.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                aria-expanded="false" aria-controls="collapseTwo">
+                                <span class="title">Where is Blue Ocean Xpress located?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseTwo" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Our headquarters is located in Karachi, Pakistan, but we operate globally with a
+                                    network of our strategic partners and facilities around the world.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                aria-expanded="false">
+                                <span class="title">What services does OXFORD SOFA'S offer?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseThree" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    BOXFORD SOFA'S offers a comprehensive range of logistics and transportation
+                                    services designed to meet the diverse needs of businesses worldwide.<br> Our key
+                                    services include:
+                                    <ul class="mt-2">
+                                        <li class="mb-2"><b>Import Services:</b> Efficient and reliable import solutions
+                                            to bring goods from global markets to your doorstep.</li>
+                                        <li class="mb-2"><b>Export Services:</b> Streamlined export processes to ensure
+                                            your products reach international destinations safely and on time.</li>
+                                        <li class="mb-2"><b>Cross-Border Services:</b> Specialized cross-border
+                                            logistics to facilitate smooth and hassle-free transportation between
+                                            countries.</li>
+                                        <li><b>Supply Chain Management:</b> End-to-end supply chain solutions to
+                                            optimize your logistics operations and enhance efficiency especially in
+                                            e-commerce.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <h3 class="mb-4">Shipping and Transportation</h3>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseFour"
+                                aria-expanded="false">
+                                <span class="title">How can I get a quote for shipping services?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseFour" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    You can request a quote by visiting
+                                    <ul class="mt-2">
+                                        <li class="mb-2"><b>Website:</b> www.OXFORD SOFA'S.com</li>
+                                        <li class="mb-2"><b>Email at:</b> info@OXFORD SOFA'S.com</li>
+                                        <li class="mb-2"><b>WhatsApp:</b> +92 0326-BOX BOX 1 (2692691)</li>
+                                        <li>Filling out the quote request form or by contacting our customer service
+                                            team directly at CareCrew@OXFORD SOFA'S.com</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseFive"
+                                aria-expanded="false">
+                                <span class="title">What types of goods can OXFORD SOFA'S transport?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseFive" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    We can transport a wide variety of goods, including but not limited to consumer
+                                    goods, Garments and industrial equipment. If you have specific requirements, please
+                                    contact us to discuss your needs.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseSix"
+                                aria-expanded="false">
+                                <span class="title">How do I track my shipment?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseSix" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    You can track your shipment by entering your tracking number on our website's
+                                    (www.BlueOceanXpress.com) tracking page. Alternatively, you can contact our customer
+                                    service team for assistance.
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mb-4">Account and Billing</h3>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseSeven"
+                                aria-expanded="false">
+                                <span class="title">How do I create an account with OXFORD SOFA'S?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseSeven" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    To create an account, visit our website and click on the "Account Opening" button.
+                                    Submit required information, our customer service team will contact you.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseEight"
+                                aria-expanded="false">
+                                <span class="title">What payment methods do you accept?</span>
+                                <span class="acc icon"><i class="fa fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseEight" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    We accept various payment methods including credit cards, bank transfers, and online
+                                    payment systems.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseNine"
+                                aria-expanded="false">
+                                <span class="title">How do I get a copy of my invoice?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseNine" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Invoices are sent via email to the registered email address on your account. You can
+                                    also access and download invoices by logging into customer Portal “My BOX”.
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mb-4">Customer Support</h3>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapseTen"
+                                aria-expanded="false">
+                                <span class="title">How can I contact customer support?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapseTen" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    You can reach our customer support team by WhatsApp at 0326-2692691, by email at
+                                    CareCrew@OXFORD SOFA'S.com, or through the live chat feature on our website. Our
+                                    support team is available 24/7.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse11"
+                                aria-expanded="false">
+                                <span class="title">What should I do if I have a complaint or issue with my
+                                    shipment?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapse11" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    If you have any issues or complaints, please contact our customer service team
+                                    immediately. We are committed to resolving any problems as quickly as possible to
+                                    ensure your satisfaction.
+                                </div>
+                            </div>
+                        </div>
+
+                        <h3 class="mb-4">Policies and Procedures</h3>
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse12"
+                                aria-expanded="false">
+                                <span class="title">What is your policy on damaged or lost goods?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapse12" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    In the event of damaged or lost goods, please contact our claims department within 3
+                                    Days of receiving your shipment. We will investigate the issue and work with you to
+                                    resolve it in accordance with our policies and applicable regulations.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse13"
+                                aria-expanded="false">
+                                <span class="title">How does OXFORD SOFA'S ensure the security of my
+                                    shipment?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapse13" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    We use advanced security measures and technology to protect your shipments,
+                                    including secure warehousing, and strict handling procedures. Our team is trained to
+                                    follow best practices in logistics and transportation security.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-header collapsed" data-toggle="collapse" data-target="#collapse14"
+                                aria-expanded="false">
+                                <span class="title">What are your terms and conditions?</span>
+                                <span class="accicon"><i class="fas fa-angle-down rotate-icon"></i></span>
+                            </div>
+                            <div id="collapse14" class="collapse" data-parent="#accordionExample">
+                                <div class="card-body">
+                                    Our terms and conditions can be found at the time of Account Opening "Terms and
+                                    Conditions" section. If you have any questions or need clarification, please contact
+                                    our legal department.
+                                </div>
+                            </div>
+                        </div>
+
+                        <span class="mt-4">Feel free to customize these questions and answers to better fit the
+                            specifics of your company's services and policies.</span>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </div>
+ <footer>
+  <div class="footer">
+    <div class="top-f">NEWSLETTER
+      <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+      <div class="search-container">
+        <input type="text" class="search-input" placeholder="Search...">
+        <button class="search-btn">Search</button>
+      </div>
+
+    </div>
+    <div class="controler">
+
+      <div class="one">
+        <div class="new">INFORMATION</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="about.html">About Oxford Sofa's</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="installment-plain.html">Installments Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Corporate Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="RnR.html">Product & Complaint Form</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+          </ul>
+
+          <ul>
+            <li><a href="blog.html">Blogs</a></li>
+          </ul>
+          <ul>
+            <li><a href="main.html">FAQs</a></li>
+          </ul>
+          <ul>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="one">
+        <div class="new">MY ACCOUNT</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="sign up.html">Create Account</a></li>
+          </ul>
+          <ul>
+            <li><a href="ss (1).html">View Cart</a></li>
+          </ul>
+          <ul>
+            <li><a href="checkout.html">Checkout</a></li>
+          </ul>
+          <ul>
+            <li><a href="map (1).html">Track My Order</a></li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="one">
+        <div class="new">POLICY</div>
+        <ul></ul>
+        <div class="f-text">
+          <ul>
+            <li><a href="RnR.html">Return and Refund Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="delivery.html">Delivery Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+          </ul>
+          <ul>
+            <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="payment-policy (1).html">Payment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="installment-plain.html">Installment Policy</a></li>
+          </ul>
+          <ul>
+            <li><a href="sofa-policy (1).html">Sofa Care & Warranty Policy</a></li>
+          </ul>
+
+        </div>
+
+      </div>
+      <div class="cent">
+        <div class="one">
+
+          <div class="new">OXFORD SOFA'S</div>
+          <ul></ul>
+          <div class="f-text">
+            <ul>
+              <li><a href=""> <img class="insta" src="images/land-location.png" alt=""> OXFORD SOFA'S Head
+                  Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                  </P></a></li>
+            </ul>
+            <ul>
+              <li><a href="">
+                  <img class="insta" src="images/phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+              </li>
+            </ul>
+
+            <ul>
+              <li><a href=""><img class="insta" src="images/whatsapp.png" alt=""> : +923217876200</a></li>
+            </ul>
+            <ul>
+              <li><a href=""> <img class="insta" src="images/envelope-dot (1).png" alt=""> : info@oxfordsofa.pk<P>
+                    :sales@oxfordsofa.pk</P></a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+
+      <!-- <div class="two">MY ACCOUNT</div>
+<div class="three">POLICY</div>
+<div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+    </div>
+  </div>
+  <div class="last">
+    <div class="oneL">
+      <p>USEFUL SOFA SET CATEGORIES</p>
+    </div>
+    <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories. Whether
+      you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+      recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle. Explore
+      our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+  </div>
+
+  <div class="last">
+    <div class="threeL">
+      <p>SHOP FURNITURE BY ROOM</p>
+    </div>
+    <div class="fourL">
+      <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room and
+        every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest bedroom,
+        our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+        inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+    </div>
+  </div>
+  <div class="last">
+    <div class="fiveL">
+      <p>OFFICE FURNITURE CATEGORIES
+      </p>
+    </div>
+    <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+      Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+      Sofas , Office Sofa Set , Office Executive Furniture.</div>
+  </div>
+  <div class="last">
+    <div class="sevenL">
+      <p>WARDROBES & KITCHEN DESIGNS</p>
+    </div>
+    <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+      functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of the
+      Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+      finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+  </div>
+  <div class="last">
+    <div class="nineL">
+      <p>DELIVERING IN</p>
+    </div>
+    <div class="tenL">Lahore , Islamabad , Karachi.</div>
+  </div>
+ </footer>
+
+</body>
+</html>

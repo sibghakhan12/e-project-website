@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shipping & Returns - Oxford Sofa's</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <link rel="stylesheet" href="css/owl.theme.green.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="stylenav.css">
+    <style>
+      
+  * {
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f4;
+    /* padding: 20px; */
+  }
+  a {
+  text-decoration: none;
+  color: aliceblue;
+}
+
+
+  .announcement-bar {
+  width: 100%;
+  height: 30px;
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  overflow: hidden;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+}
+
+.announcement-text {
+  position: absolute;
+  display: flex;
+  justify-content: space-around;
+  width: max-content;
+  animation: scrollText 24s linear infinite;
+  list-style: none;
+  gap: 50px;
+  padding: 5px 0;
+  font-weight: bold;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Main Navigation */
+.navbar {
+  background-color: #000000;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo h2 {
+  color: #fff;
+  font-size: 2.5rem;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.search-bar {
+  position: relative;
+  flex: 1;
+  max-width: 500px;
+  margin: 10px 20px;
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 12px 45px 12px 20px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1rem;
+  outline: none;
+}
+
+.search-bar button {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+}
+
+.wedding-sale-logo {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: inline-block;
+  cursor: pointer;
+  margin: 0 15px;
+}
+
+.wedding-sale-logo:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgb(255, 255, 255);
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 15px;
+}
+
+.nav-item {
+  text-align: center;
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+}
+
+.nav-item i {
+  font-size: 1.5rem;
+  margin-bottom: 3px;
+}
+
+.nav-item .text {
+  font-size: 0.8rem;
+}
+
+.nav-item span {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.cart {
+  position: relative;
+}
+
+.cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff0000;
+  color: white;
+  font-size: 0.7rem;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+.cart-amount {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+/* Secondary Navigation */
+.secondary-nav {
+  background-color: rgb(0, 0, 0);
+  width: 100%;
+  border-top: 2px solid #ffffff;
+}
+
+.secondary-nav ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav li {
+  padding: 5px 0;
+}
+
+.secondary-nav a {
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+
+.secondary-nav a:hover {
+  background-color: #333;
+  animation: shake 0.1s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* Mobile Menu (hidden by default) */
+.mobile-menu {
+  display: none;
+  background-color: #000000;
+  width: 100%;
+  padding: 15px;
+}
+
+.mobile-menu.active {
+  display: block;
+}
+
+.mobile-menu ul {
+  list-style: none;
+}
+
+.mobile-menu li {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.mobile-menu a {
+  display: block;
+  padding: 8px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .logo h2 {
+    font-size: 1.8rem;
+  }
+  
+  .nav-right {
+    gap: 15px;
+  }
+  
+  .wedding-sale-logo {
+    margin: 0 10px;
+    padding: 8px 15px;
+  }
+  
+  .secondary-nav ul {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .search-bar {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+    margin: 10px 0;
+    display: none;
+  }
+  
+  .search-bar.active {
+    display: block;
+  }
+  
+  .wedding-sale-logo {
+    display: none;
+  }
+  
+  .nav-right {
+    display: none;
+  }
+  
+  .nav-right.active {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 10px 0;
+    border-top: 1px solid #333;
+  }
+  
+  .secondary-nav {
+    display: none;
+  }
+  
+  .secondary-nav.active {
+    display: block;
+  }
+  
+  .secondary-nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h2 {
+    font-size: 1.5rem;
+  }
+  
+  .announcement-text {
+    gap: 30px;
+    font-size: 0.9rem;
+  }
+  
+  .nav-item .text {
+    font-size: 0.7rem;
+  }
+  
+  .nav-item i {
+    font-size: 1.2rem;
+  }
+}
+
+        /* Shipping & Returns specific styles */
+        .shipping-returns-hero {
+            background-color: #f8f9fa;
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .shipping-returns-hero h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .shipping-returns-hero p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .policy-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .policy-card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .policy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .policy-card h2 {
+            color: #222;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff0000;
+            display: inline-block;
+        }
+        
+        .policy-card h3 {
+            color: #444;
+            font-size: 1.3rem;
+            margin: 25px 0 15px;
+        }
+        
+        .policy-card p, .policy-card ul {
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .policy-card ul {
+            padding-left: 20px;
+        }
+        
+        .policy-card li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background-color: #fff9f9;
+            border-left: 4px solid #ff0000;
+            padding: 15px;
+            margin: 20px 0;
+        }
+        
+        .contact-promo {
+            background-color: #ff0000;
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 50px;
+        }
+        
+        .contact-promo h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+        
+        .contact-promo p {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+        }
+        
+        .contact-btn {
+            background: white;
+            color: #ff0000;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-btn:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 768px) {
+            .shipping-returns-hero {
+                padding: 40px 0;
+            }
+            
+            .shipping-returns-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .shipping-returns-hero p {
+                font-size: 1rem;
+            }
+            
+            .policy-card {
+                padding: 20px;
+            }
+            
+            .policy-card h2 {
+                font-size: 1.5rem;
+            }
+            
+            .policy-card h3 {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section (from nav.html) -->
+    <header>
+  <div class="announcement-bar">
+    <ul class="announcement-text">
+      <li>Shop New Arrivals for Exclusive Designs</li>
+      <li>Explore Sale Items - Limited Time Only!</li>
+      <li>Free Shipping On Orders Above PKR 3 Million</li>
+      <li>Shop Celebrity Favorites</li>
+    </ul>
+  </div>
+
+  <!-- Main Navigation -->
+  <nav class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <h2>OXFORD SOFA'S</h2>
+      <button class="mobile-menu-toggle">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+
+    <!-- Search Bar -->
+    <div class="search-bar">
+      <input type="text" placeholder="Search sofas...">
+      <button type="submit"><i class="fas fa-search"></i></button>
+    </div>
+
+    <!-- Wedding Sale Banner -->
+    <div class="wedding-sale-logo">
+      <a href="buynow.html">Wedding Sale</a> 
+    </div>
+
+    <!-- Navigation Items -->
+    <div class="nav-right">
+      <!-- Reorder -->
+      <div class="nav-item" onclick="goToMyItems()">
+        <i class="fas fa-rotate-left"></i>
+        <div class="text">
+          <small>Reorder</small><br>
+          <span>My Items</span>
+        </div>
+      </div>
+
+      <!-- Account -->
+      <div class="nav-item">
+        <i class="fas fa-user"></i>
+        <div class="text">
+          <small>Sign In</small><br>
+          <span>My Account</span>
+        </div>
+      </div>
+
+      <!-- Cart -->
+      <div class="nav-item cart">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>
+        <div class="cart-amount">₹0</div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Secondary Navigation -->
+  <div class="secondary-nav">
+    <ul>
+      <li><a href="home (1) (1) (1).html">Home</a></li>
+     <li><a href="ss (1).html">Shop</a></li>
+      <li><a href="comparison.html">Sofa Comparision</a></li>
+      <li><a href="shipnret.html">Shipping & Return</a></li>
+      <li><a href="main.html">FAQ's</a></li>
+      <li><a href="contact.html">Contact Us</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="logins.html">login</a></li>
+      <li><a href="retsnords.html">Returns & Orders</a></li>
+    </ul>
+  </div>
+      </header>
+
+    <!-- Shipping & Returns Content -->
+    <section class="shipping-returns-hero">
+        <div class="container">
+            <h1>Shipping & Returns Policy</h1>
+            <p>We want you to be completely satisfied with your Oxford Sofa's purchase. Below you'll find all the details about our shipping and return policies.</p>
+        </div>
+    </section>
+
+    <div class="policy-section">
+        <div class="policy-card">
+            <h2>Shipping Information</h2>
+            
+            <h3>Delivery Timeframes</h3>
+            <p>We strive to process and ship all orders within 2-3 business days. Delivery times vary depending on your location:</p>
+            <ul>
+                <li><strong>Karachi:</strong> 3-5 business days after processing</li>
+                <li><strong>Lahore/Islamabad:</strong> 5-7 business days after processing</li>
+                <li><strong>Other Major Cities:</strong> 7-10 business days after processing</li>
+                <li><strong>Remote Areas:</strong> 10-14 business days after processing</li>
+            </ul>
+            
+            <h3>Shipping Costs</h3>
+            <p>Shipping costs are calculated based on the size and weight of your order, as well as your delivery location:</p>
+            <ul>
+                <li><strong>Free Shipping:</strong> On all orders over PKR 3,000,000</li>
+                <li><strong>Standard Shipping:</strong> PKR 5,000 - PKR 15,000 depending on location</li>
+                <li><strong>Express Shipping:</strong> Available for an additional PKR 10,000 (delivery in 2-3 business days)</li>
+            </ul>
+            
+            <div class="highlight-box">
+                <p><strong>Note:</strong> For large furniture items, we offer white-glove delivery service which includes room placement and basic assembly. Our delivery team will contact you to schedule a convenient delivery window.</p>
+            </div>
+            
+            <h3>Order Tracking</h3>
+            <p>Once your order has shipped, you will receive a confirmation email with tracking information. You can also track your order by logging into your account on our website.</p>
+        </div>
+        
+        <div class="policy-card">
+            <h2>Returns & Exchanges</h2>
+            
+            <h3>Our Return Policy</h3>
+            <p>We accept returns within 30 days of delivery for most items. To be eligible for a return:</p>
+            <ul>
+                <li>The item must be unused and in the same condition as when you received it</li>
+                <li>The item must be in its original packaging</li>
+                <li>You must have the original receipt or proof of purchase</li>
+            </ul>
+            
+            <h3>Non-Returnable Items</h3>
+            <p>Certain items cannot be returned:</p>
+            <ul>
+                <li>Custom or made-to-order furniture</li>
+                <li>Items marked as "Final Sale"</li>
+                <li>Used or assembled furniture</li>
+                <li>Items without original packaging</li>
+            </ul>
+            
+            <h3>Return Process</h3>
+            <p>To initiate a return:</p>
+            <ol>
+                <li>Contact our customer service team to obtain a Return Authorization Number</li>
+                <li>Pack the item securely in its original packaging</li>
+                <li>Include all accessories, manuals, and parts</li>
+                <li>Ship the item back to us using a trackable shipping service</li>
+            </ol>
+            
+            <div class="highlight-box">
+                <p><strong>Important:</strong> You will be responsible for return shipping costs unless the return is due to our error or a defective product. Original shipping fees are non-refundable.</p>
+            </div>
+            
+            <h3>Refunds</h3>
+            <p>Once your return is received and inspected, we will notify you of the approval or rejection of your refund. If approved, your refund will be processed within 10 business days and a credit will automatically be applied to your original method of payment.</p>
+        </div>
+        
+        <div class="policy-card">
+            <h2>Damaged or Defective Items</h2>
+            
+            <p>We take great care in packaging your items to prevent damage during shipping. However, if your item arrives damaged or defective:</p>
+            
+            <ul>
+                <li>Please inspect your order upon delivery</li>
+                <li>Note any damage on the delivery receipt before signing</li>
+                <li>Contact us within 48 hours of delivery with photos of the damage</li>
+                <li>We will arrange for repair, replacement, or return as needed</li>
+            </ul>
+            
+            <p>For minor damage that can be repaired, we may offer a partial refund or arrange for a professional repair at no cost to you.</p>
+        </div>
+        
+        <div class="contact-promo">
+            <h3>Have Questions About Shipping or Returns?</h3>
+            <p>Our customer service team is happy to help with any questions about our policies or your specific order.</p>
+            <button class="contact-btn" onclick="window.location.href='contactus.html'">Contact Us</button>
+        </div>
+    </div>
+
+    <!-- Footer Section (from nav.html) -->
+    <footer>
+        <div class="footer">
+          <div class="top-f">NEWSLETTER
+            <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+            <div class="search-container">
+              <input type="text" class="search-input" placeholder="Search...">
+              <button class="search-btn">Search</button>
+            </div>
+      
+          </div>
+          <div class="controler">
+      
+            <div class="one">
+              <div class="new">INFORMATION</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="about.html">About Oxford Sofa's</a></li>
+                </ul>
+      
+                <ul>
+                  <li><a href="installment-plain.html">Installments Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="checkout.html">Corporate Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="RnR.html">Product & Complaint Form</a></li>
+                </ul>
+                <ul>
+                  <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+                </ul>
+      
+                <ul>
+                  <li><a href="blog.html">Blogs</a></li>
+                </ul>
+                <ul>
+                  <li><a href="main.html">FAQs</a></li>
+                </ul>
+                <ul>
+                  <li><a href="contact.html">Contact Us</a></li>
+                </ul>
+      
+              </div>
+      
+            </div>
+            <div class="one">
+              <div class="new">MY ACCOUNT</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="sign up.html">Create Account</a></li>
+                </ul>
+                <ul>
+                  <li><a href="ss (1).html">View Cart</a></li>
+                </ul>
+                <ul>
+                  <li><a href="checkout.html">Checkout</a></li>
+                </ul>
+                <ul>
+                  <li><a href="map (1).html">Track My Order</a></li>
+                </ul>
+      
+              </div>
+            </div>
+            <div class="one">
+              <div class="new">POLICY</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href="RnR.html">Return and Refund Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="delivery.html">Delivery Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+                </ul>
+                <ul>
+                  <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="payment-policy (1).html">Payment Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="installment-plain.html">Installment Policy</a></li>
+                </ul>
+                <ul>
+                  <li><a href="sofa-policy (1).html">Furniture Policy</a></li>
+                </ul>
+      
+              </div>
+      
+            </div>
+            <div class="cent">
+              <div class="one">
+      
+                <div class="new">OXFORD SOFA'S</div>
+                <ul></ul>
+                <div class="f-text">
+                  <ul>
+                    <li><a href=""> <img class="insta" src="images/land-location.png" alt=""> OXFORD SOFA'S Head
+                        Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                        </P></a></li>
+                  </ul>
+                  <ul>
+                    <li><a href="">
+                        <img class="insta" src="images/phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+                    </li>
+                  </ul>
+      
+                  <ul>
+                    <li><a href=""><img class="insta" src="images/whatsapp.png" alt=""> : +923217876200</a></li>
+                  </ul>
+                  <ul>
+                    <li><a href=""> <img class="insta" src="images/envelope-dot.png" alt=""> : info@oxfordsofa.pk<P>
+                          :sales@oxfordsofa.pk</P></a></li>
+                  </ul>
+                </div>
+      
+      
+              </div>
+            </div>
+      
+            <!-- <div class="two">MY ACCOUNT</div>
+      <div class="three">POLICY</div>
+      <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+          </div>
+        </div>
+        <div class="last">
+          <div class="oneL">
+            <p>USEFUL SOFA SET CATEGORIES</p>
+          </div>
+          <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories. Whether
+            you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+            recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle. Explore
+            our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+        </div>
+      
+        <div class="last">
+          <div class="threeL">
+            <p>SHOP FURNITURE BY ROOM</p>
+          </div>
+          <div class="fourL">
+            <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room and
+              every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest bedroom,
+              our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+              inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+          </div>
+        </div>
+        <div class="last">
+          <div class="fiveL">
+            <p>OFFICE FURNITURE CATEGORIES
+            </p>
+          </div>
+          <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+            Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+            Sofas , Office Sofa Set , Office Executive Furniture.</div>
+        </div>
+        <div class="last">
+          <div class="sevenL">
+            <p>WARDROBES & KITCHEN DESIGNS</p>
+          </div>
+          <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+            functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of the
+            Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+            finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+        </div>
+        <div class="last">
+          <div class="nineL">
+            <p>DELIVERING IN</p>
+          </div>
+          <div class="tenL">Lahore , Islamabad , Karachi.</div>
+        </div>
+      </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"></script>
+</body>
+</html>

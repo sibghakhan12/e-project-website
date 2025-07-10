@@ -1,0 +1,1449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <link rel="stylesheet" href="css/owl.carousel.min.css">
+     <link rel="stylesheet" href="css/owl.theme.green.min.css"> -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.green.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="stylenav.css">
+</head>
+<style>
+  * {
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f4;
+    /* padding: 20px; */
+  }
+
+  a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+
+  .announcement-bar {
+    width: 100%;
+    height: 30px;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    overflow: hidden;
+    position: relative;
+    border-bottom: 2px solid #ffffff;
+  }
+
+  .announcement-text {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    width: max-content;
+    animation: scrollText 24s linear infinite;
+    list-style: none;
+    gap: 50px;
+    padding: 5px 0;
+    font-weight: bold;
+  }
+
+  @keyframes scrollText {
+    0% {
+      transform: translateX(100%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* Main Navigation */
+  .navbar {
+    background-color: #000000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    flex-wrap: wrap;
+    position: relative;
+  }
+
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .logo h2 {
+    color: #fff;
+    font-size: 2.5rem;
+  }
+
+  .mobile-menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+
+  .search-bar {
+    position: relative;
+    flex: 1;
+    max-width: 500px;
+    margin: 10px 20px;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 12px 45px 12px 20px;
+    border-radius: 50px;
+    border: none;
+    font-size: 1rem;
+    outline: none;
+  }
+
+  .search-bar button {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ff0000;
+    color: white;
+    cursor: pointer;
+  }
+
+  .wedding-sale-logo {
+    background-color: red;
+    color: white;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 50px;
+    animation: pulse 2s infinite;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 15px;
+  }
+
+  .wedding-sale-logo:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 12px rgb(255, 255, 255);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+
+    50% {
+      transform: scale(1.15);
+    }
+
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 15px;
+  }
+
+  .nav-item {
+    text-align: center;
+    cursor: pointer;
+    color: #fff;
+    position: relative;
+  }
+
+  .nav-item i {
+    font-size: 1.5rem;
+    margin-bottom: 3px;
+  }
+
+  .nav-item .text {
+    font-size: 0.8rem;
+  }
+
+  .nav-item span {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+
+  .cart {
+    position: relative;
+  }
+
+  .cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 0.7rem;
+    padding: 3px 6px;
+    border-radius: 50%;
+  }
+
+  .cart-amount {
+    font-size: 0.75rem;
+    margin-top: 2px;
+  }
+
+  /* Secondary Navigation */
+  .secondary-nav {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    border-top: 2px solid #ffffff;
+  }
+
+  .secondary-nav ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px 0;
+  }
+
+  .secondary-nav li {
+    padding: 5px 0;
+  }
+
+  .secondary-nav a {
+    font-weight: bold;
+    font-size: 1rem;
+    transition: all 0.3s;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .secondary-nav a:hover {
+    background-color: #333;
+    animation: shake 0.1s;
+  }
+
+  @keyframes shake {
+    0% {
+      transform: translate(1px, 1px) rotate(0deg);
+    }
+
+    10% {
+      transform: translate(-1px, -2px) rotate(-1deg);
+    }
+
+    20% {
+      transform: translate(-3px, 0px) rotate(1deg);
+    }
+
+    30% {
+      transform: translate(3px, 2px) rotate(0deg);
+    }
+
+    40% {
+      transform: translate(1px, -1px) rotate(1deg);
+    }
+
+    50% {
+      transform: translate(-1px, 2px) rotate(-1deg);
+    }
+
+    60% {
+      transform: translate(-3px, 1px) rotate(0deg);
+    }
+
+    70% {
+      transform: translate(3px, 1px) rotate(-1deg);
+    }
+
+    80% {
+      transform: translate(-1px, -1px) rotate(1deg);
+    }
+
+    90% {
+      transform: translate(1px, 2px) rotate(0deg);
+    }
+
+    100% {
+      transform: translate(1px, -2px) rotate(-1deg);
+    }
+  }
+
+  /* Mobile Menu (hidden by default) */
+  .mobile-menu {
+    display: none;
+    background-color: #000000;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .mobile-menu.active {
+    display: block;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+  }
+
+  .mobile-menu li {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+  }
+
+  .mobile-menu a {
+    display: block;
+    padding: 8px 0;
+  }
+
+  /* Responsive Styles */
+  @media (max-width: 1024px) {
+    .logo h2 {
+      font-size: 1.8rem;
+    }
+
+    .nav-right {
+      gap: 15px;
+    }
+
+    .wedding-sale-logo {
+      margin: 0 10px;
+      padding: 8px 15px;
+    }
+
+    .secondary-nav ul {
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 10px 15px;
+    }
+
+    .mobile-menu-toggle {
+      display: block;
+    }
+
+    .search-bar {
+      order: 1;
+      width: 100%;
+      max-width: 100%;
+      margin: 10px 0;
+      display: none;
+    }
+
+    .search-bar.active {
+      display: block;
+    }
+
+    .wedding-sale-logo {
+      display: none;
+    }
+
+    .nav-right {
+      display: none;
+    }
+
+    .nav-right.active {
+      display: flex;
+      width: 100%;
+      justify-content: space-around;
+      margin-top: 10px;
+      padding: 10px 0;
+      border-top: 1px solid #333;
+    }
+
+    .secondary-nav {
+      display: none;
+    }
+
+    .secondary-nav.active {
+      display: block;
+    }
+
+    .secondary-nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .logo h2 {
+      font-size: 1.5rem;
+    }
+
+    .announcement-text {
+      gap: 30px;
+      font-size: 0.9rem;
+    }
+
+    .nav-item .text {
+      font-size: 0.7rem;
+    }
+
+    .nav-item i {
+      font-size: 1.2rem;
+    }
+  }
+
+
+
+  a {
+    text-decoration: none;
+    align-items: center;
+    color: aliceblue;
+  }
+
+  .textpic {
+    color: white;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin-top: -5 00px;
+    background-color: rgb(168, 168, 168);
+    margin-left: 400px;
+    font-size: 40px;
+  }
+
+  .small {
+    font-size: 50px;
+    ;
+  }
+
+  .product-container {
+    display: flex;
+    gap: 120px;
+  }
+
+  .card {
+    width: 18rem;
+    border: black 2px solid;
+  }
+
+  .btn-secondary:hover {
+    background-color: #500303;
+    color: #ffffff;
+    transform: scale(1.02);
+    transition: all 0.3s ease;
+  }
+
+  .btn {
+    background-color: antiquewhite;
+    color: black;
+
+  }
+
+  .bi {
+    padding: 10px;
+  }
+
+  .star-rating {
+    direction: rtl;
+    display: inline-block;
+  }
+
+  .star-rating input {
+    display: none;
+  }
+
+  .star-rating label {
+    font-size: 1.5rem;
+    color: #ddd;
+    padding: 5px;
+    cursor: pointer;
+    transition: color .2s;
+  }
+
+  .star-rating label:hover,
+  .star-rating label:hover~label,
+  .star-rating input:checked~label {
+    color: #ffc107;
+  }
+
+  .card-text {
+    font-size: 2rem;
+  }
+
+  .discount-sticker {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: red;
+    color: white;
+    padding: 4px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border-radius: 5px;
+    z-index: 1;
+  }
+
+  .card-img-wrapper {
+    position: relative;
+  }
+
+  /* Breadcrumb Section */
+  .breadcrumb-option {
+    background: #f3f3f3;
+    padding: 20px 0;
+  }
+
+  .breadcrumb__text h4 {
+    font-size: 24px;
+    font-weight: 600;
+  }
+
+  .breadcrumb__links a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+  }
+
+  .breadcrumb__links span {
+    color: #999;
+  }
+
+  /* Sidebar */
+  .shop__sidebar {
+    background: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+  }
+
+  .shop__sidebar__search input {
+    width: calc(100% - 40px);
+    border: 1px solid #ccc;
+    padding: 10px;
+  }
+
+  .shop__sidebar__search button {
+    background: #333;
+    color: white;
+    border: none;
+    padding: 10px 12px;
+  }
+
+  .shop__sidebar__categories ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .shop__sidebar__categories li {
+    margin-bottom: 10px;
+  }
+
+  .shop__sidebar__categories a {
+    color: #303030;
+    text-decoration: none;
+  }
+
+  .shop__sidebar__price {
+    margin-top: 20px;
+  }
+
+  .shop__sidebar__price ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .shop__sidebar__price ul li {
+    margin-bottom: 10px;
+  }
+
+  .shop__sidebar__price ul li a {
+    display: block;
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border-radius: 4px;
+  }
+
+  .shop__sidebar__price ul li a:hover {
+    background-color: #f5f5f5;
+    color: #d10024;
+    /* Highlight color on hover */
+    font-weight: 500;
+  }
+
+  .shop__sidebar__price ul li,
+  .shop__sidebar__tags a {
+    display: inline-block;
+    margin: 5px 5px 5px 0;
+  }
+
+  .shop__sidebar__tags a {
+    background: #eee;
+    padding: 5px 10px;
+    font-size: 13px;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #272626;
+  }
+
+  .shop__sidebar__size label,
+  .shop__sidebar__color label {
+    display: inline-block;
+    margin-right: 8px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .shop__sidebar__size input,
+  .shop__sidebar__color input {
+    margin-left: 5px;
+  }
+
+  /* Colors */
+  .shop__sidebar__color label {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+  }
+
+  .shop__sidebar__color .c-1 {
+    background: #000;
+  }
+
+  .shop__sidebar__color .c-2 {
+    background: #007bff;
+  }
+
+  .shop__sidebar__color .c-3 {
+    background: #28a745;
+  }
+
+  .shop__sidebar__color .c-4 {
+    background: #ffc107;
+  }
+
+  .shop__sidebar__color .c-5 {
+    background: #dc3545;
+  }
+
+  .shop__sidebar__color .c-6 {
+    background: #6f42c1;
+  }
+
+  .shop__sidebar__color .c-7 {
+    background: #fd7e14;
+  }
+
+  .shop__sidebar__color .c-8 {
+    background: #20c997;
+  }
+
+  .shop__sidebar__color .c-9 {
+    background: #17a2b8;
+  }
+
+  /* Accordion */
+  .shop__sidebar .card {
+    margin-bottom: 15px;
+    border: none;
+  }
+
+  .shop__sidebar .card-heading a {
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 10px;
+    background: #eaeaea;
+    color: #333;
+    border-radius: 4px;
+  }
+
+  /* Product Options */
+  .shop__product__option {
+    margin-bottom: 30px;
+  }
+
+  .shop__product__option__left p,
+  .shop__product__option__right p {
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .shop__product__option__right select {
+    padding: 6px 10px;
+    margin-left: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  /* Responsive Fixes */
+  @media (max-width: 768px) {
+
+    .shop__product__option__left,
+    .shop__product__option__right {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+  }
+
+  .img-fluid {
+    height: 100px;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      flex-direction: column;
+    }
+  }
+</style>
+
+<body>
+  <header>
+    <div class="announcement-bar">
+      <ul class="announcement-text">
+        <li>Shop New Arrivals for Exclusive Designs</li>
+        <li>Explore Sale Items - Limited Time Only!</li>
+        <li>Free Shipping On Orders Above PKR 3 Million</li>
+        <li>Shop Celebrity Favorites</li>
+      </ul>
+    </div>
+
+    <!-- Main Navigation -->
+    <nav class="navbar">
+      <!-- Logo -->
+      <div class="logo">
+        <h2>OXFORD SOFA'S</h2>
+        <button class="mobile-menu-toggle">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="search-bar">
+        <input type="text" placeholder="Search sofas...">
+        <button type="submit"><i class="fas fa-search"></i></button>
+      </div>
+
+      <!-- Wedding Sale Banner -->
+      <div class="wedding-sale-logo">
+        <a href="buynow.html">Wedding Sale</a>
+      </div>
+
+      <!-- Navigation Items -->
+      <div class="nav-right">
+        <!-- Reorder -->
+        <div class="nav-item" onclick="goToMyItems()">
+          <i class="fas fa-rotate-left"></i>
+          <div class="text">
+            <small>Reorder</small><br>
+            <span>My Items</span>
+          </div>
+        </div>
+
+        <!-- Account -->
+        <div class="nav-item">
+          <i class="fas fa-user"></i>
+          <div class="text">
+            <small>Sign In</small><br>
+            <span>My Account</span>
+          </div>
+        </div>
+
+        <!-- Cart -->
+        <div class="nav-item cart">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+          <div class="cart-amount">₹0</div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Secondary Navigation -->
+    <div class="secondary-nav">
+      <ul>
+        <li><a href="home (1) (1) (1).html">Home</a></li>
+        <li><a href="ss (1).html">SHOP</a></li>
+        <li><a href="comparison.html">Sofa Comparision</a></li>
+        <li><a href="shipnret.html">Shipping & Return</a></li>
+        <li><a href="main.html">FAQ's</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="logins.html">login</a></li>
+        <li><a href="retsnords.html">Returns & Orders</a></li>
+      </ul>
+    </div>
+  </header>
+  <section class="breadcrumb-option">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="breadcrumb__text">
+            <h4>Shop</h4>
+            <div class="breadcrumb__links">
+              <a href="#">Home</a>
+              <span>Shop</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="shop spad">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <div class="shop__sidebar">
+              <div class="shop__sidebar__search">
+                <form action="#">
+                  <input type="text" placeholder="Search...">
+                  <button type="submit"><span class="icon_search"></span></button>
+                </form>
+              </div>
+              <div class="shop__sidebar__accordion">
+                <div class="accordion" id="accordionExample">
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseOne">Categories</a>
+                    </div>
+                    <div id="collapseOne" class="collapse show" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <div class="shop__sidebar__categories">
+                          <ul class="nice-scroll">
+                            <li><a href="card.html">l-shaped sofas (24)</a></li>
+                            <li><a href="product.html">seven seaters (24)</a></li>
+                            <li><a href="flex.html">sofa cum beds (24)</a></li>
+                            <li><a href="col.html">sofa stools (24)</a></li>
+                            <li><a href="category.html">one seaters (24)</a></li>
+                            <li><a href="floral.html">floral sofas (24)</a></li>
+                            <li><a href="deewan1.html">dewaans (24)</a></li>
+                            <li><a href="twoseater.html">two seaters (24)</a></li>
+                            <li><a href="three.html">three seaters (24)</a></li>
+                            <li><a href="Velvet.html">velvet sofas (24)</a></li>
+                            <li><a href="luxury1.html">luxury sofas (24)</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseThree">Filter Price</a>
+                    </div>
+                    <div id="collapseThree" class="collapse show" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <div class="shop__sidebar__price">
+                          <ul>
+                            <li><a href="#">PKR20000 - PKR30000</a></li>
+                            <li><a href="#">PKR35000- PKR45000</a></li>
+                            <li><a href="#">PKR75000 - PKR80000</a></li>
+                            <li><a href="#">PKR90000 - PKR100000</a></li>
+                            <li><a href="#">PKR100000 - PKR200000</a></li>
+                            <li><a href="#">PKR200000+</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseFive">Colors</a>
+                    </div>
+                    <div id="collapseFive" class="collapse show" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <div class="shop__sidebar__color">
+                          <label class="c-1" for="sp-1">
+                            <input type="radio" id="sp-1">
+                          </label>
+                          <label class="c-2" for="sp-2">
+                            <input type="radio" id="sp-2">
+                          </label>
+                          <label class="c-3" for="sp-3">
+                            <input type="radio" id="sp-3">
+                          </label>
+                          <label class="c-4" for="sp-4">
+                            <input type="radio" id="sp-4">
+                          </label>
+                          <label class="c-5" for="sp-5">
+                            <input type="radio" id="sp-5">
+                          </label>
+                          <label class="c-6" for="sp-6">
+                            <input type="radio" id="sp-6">
+                          </label>
+                          <label class="c-7" for="sp-7">
+                            <input type="radio" id="sp-7">
+                          </label>
+                          <label class="c-8" for="sp-8">
+                            <input type="radio" id="sp-8">
+                          </label>
+                          <label class="c-9" for="sp-9">
+                            <input type="radio" id="sp-9">
+                          </label>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <div class="card-heading">
+                      <a data-toggle="collapse" data-target="#collapseSix">Tags</a>
+                    </div>
+                    <div id="collapseSix" class="collapse show" data-parent="#accordionExample">
+                      <div class="card-body">
+                        <div class="shop__sidebar__tags">
+                          <a href="#">homes</a>
+                          <a href="#">offices</a>
+                          <a href="#">resturants</a>
+                          <a href="#">hotels</a>
+                          <a href="#">cafes</a>
+                          <a href="#">banquets</a>
+                          <a href="#">companies</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-9">
+            <div class="shop__product__option">
+              <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="shop__product__option__left">
+                    <p>Showing 1–12 of 264 results</p>
+                  </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                  <div class="shop__product__option__right">
+                    <p>Sort by Price:</p>
+                    <select>
+                      <option value="">Low To High</option>
+                      <option value="">PKR20000 - PKR80000</option>
+                      <option value="">PKR100000 - PKR200000</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+              <div class="container my-5">
+                <div class="owl-carousel owl-theme">
+                  <div class="item"><img src="images/download (1).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/download (6).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img
+                      src="images/Contemporary Grey L-Shaped Velvet Sofa with Gold Legs & Quilted Ottoman.jpeg "
+                      height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/sofa couch design blue sofa modern sofa designs.jpeg" height="50px"
+                      class="img-fluid"></div>
+                  <div class="item"><img src="images/download (15).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/download (18).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/download (9).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/download (5).jpeg" height="50px" class="img-fluid"></div>
+                  <div class="item"><img
+                      src="images/Oe-fashion Factory Custom Modern Design Luxury Furniture Fabric Sets Couch Living Room Sofas - Buy Living Room Sofas sofa Set Designs couch Living Room Sofa Product on Alibaba_com.jpeg"
+                      height="50px" class="img-fluid"></div>
+                  <div class="item"><img src="images/SPENCER STOOL.jpeg" height="50px" class="img-fluid"></div>
+                </div>
+              </div>
+
+              <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+
+
+
+              <script>
+                $(document).ready(function () {
+                  $('.owl-carousel').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true,
+                    responsive: {
+                      0: {
+                        items: 1
+                      },
+                      600: {
+                        items: 3
+                      },
+                      1000: {
+                        items: 5
+                      }
+                    }
+                  });
+                });
+              </script>
+              <div class="container my-4">
+                <div class="row g-4">
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/img 3.jpeg" class="card-img-top" alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title"> EVAN L- SHAPED SOFA</h5>
+                          <p class="card-text">PKR : 100000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/Linen Full Sleeper Sofa W_ Storage.jpeg" class="card-img-top" alt="Sofa"
+                          height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">WOODEN SOFA CUM Bed</h5>
+                          <p class="card-text">PKR: 80000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/img.jpeg" class="card-img-top" alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">BLUE COUCH</h5>
+                          <p class="card-text">PKR : 20000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/img 1.jpeg" class="card-img-top" alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title"> COMFY L- SHAPED COUCHES</h5>
+                          <p class="card-text">RS : 80000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/Suppliers, Manufacturers, Exporters & Importers (1).jpeg" class="card-img-top"
+                          alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">BLACK SEVEN SEATERS</h5>
+                          <p class="card-text">PKR: 1500000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/sofa couch design blue sofa modern sofa designs.jpeg" class="card-img-top"
+                          alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">WOODEN DEWAAN</h5>
+                          <p class="card-text">PKR: 80000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img
+                          src="images/Splendor Furniture Living Room 31_5_ Sofa in Single Seat Sofa _ Wayfair Living Room Sets.jpeg"
+                          class="card-img-top" alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title"> GREEN SEVEN SEATERS</h5>
+                          <p class="card-text">PKR: 1800000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img
+                          src="images/chic-mid-century-modern-luxury-aesthetics-living-room-with-gray-velvet-couch-blue-rug.jpg"
+                          class="card-img-top" alt="Sofa" height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">MODERN THREE SEATERS</h5>
+                          <p class="card-text">PKR : 80000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-4">
+                    <div class="card h-100">
+                      <div class="card-img-wrapper">
+                        <span class="discount-sticker">20% OFF</span>
+                        <img src="images/The 15 Best Armchairs and Accent Chairs.jpeg" class="card-img-top" alt="Sofa"
+                          height="300px">
+                        <div class="card-body">
+                          <h5 class="card-title">RECLINERS</h5>
+                          <p class="card-text">PKR :50000 </p>
+                          <div class="star-rating mb-2">
+                            <input type="radio" id="star5-1" name="rating1" value="5"><label for="star5-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star4-1" name="rating1" value="4"><label for="star4-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star3-1" name="rating1" value="3"><label for="star3-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star2-1" name="rating1" value="2"><label for="star2-1"
+                              class="bi bi-star-fill"></label>
+                            <input type="radio" id="star1-1" name="rating1" value="1"><label for="star1-1"
+                              class="bi bi-star-fill"></label>
+                          </div>
+                          <a href="#" class="btn btn-secondary w-100"><i class="bi bi-cart"></i> ADD TO CART</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pagination-controls text-center my-4">
+                    <a href="category (1).html" class="btn btn-secondary me-2">NEXT</a>
+                  </div>
+    </section>
+
+    <footer>
+      <div class="footer">
+        <div class="top-f">NEWSLETTER
+          <P class="top-text-f">Be the first to know about the latest deals, discounts updates & more!</P>
+          <div class="search-container">
+            <input type="text" class="search-input" placeholder="Search...">
+            <button class="search-btn">Search</button>
+          </div>
+
+        </div>
+        <div class="controler">
+
+          <div class="one">
+            <div class="new">INFORMATION</div>
+            <ul></ul>
+            <div class="f-text">
+              <ul>
+                <li><a href="about .html">About Oxford Sofa's</a></li>
+              </ul>
+
+              <ul>
+                <li><a href="installment-plain .html">Installments Form</a></li>
+              </ul>
+              <ul>
+                <li><a href="checkout.html">Corporate Form</a></li>
+              </ul>
+              <ul>
+                <li><a href="RnR.html">Product & Complaint Form</a></li>
+              </ul>
+              <ul>
+                <li><a href="term&condition (3).html">Review & Testimonials</a></li>
+              </ul>
+
+              <ul>
+                <li><a href="blog.html">Blogs</a></li>
+              </ul>
+              <ul>
+                <li><a href="main.html">FAQs</a></li>
+              </ul>
+              <ul>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+
+            </div>
+
+          </div>
+          <div class="one">
+            <div class="new">MY ACCOUNT</div>
+            <ul></ul>
+            <div class="f-text">
+              <ul>
+                <li><a href="sign up.html">Create Account</a></li>
+              </ul>
+              <ul>
+                <li><a href="ss (1).html">View Cart</a></li>
+              </ul>
+              <ul>
+                <li><a href="checkout.html">Checkout</a></li>
+              </ul>
+              <ul>
+                <li><a href="map (1).html">Track My Order</a></li>
+              </ul>
+
+            </div>
+          </div>
+          <div class="one">
+            <div class="new">POLICY</div>
+            <ul></ul>
+            <div class="f-text">
+              <ul>
+                <li><a href="RnR.html">Return and Refund Policy</a></li>
+              </ul>
+              <ul>
+                <li><a href="delivery.html">Delivery Policy</a></li>
+              </ul>
+              <ul>
+                <li><a href="term&condition (3).html">Terms & Conditions</a></li>
+              </ul>
+              <ul>
+                <li><a href="privcy policy (1).html">Privacy Policy</a></li>
+              </ul>
+              <ul>
+                <li><a href="payment-policy (1).html">Payment Policy</a></li>
+              </ul>
+              <ul>
+                <li><a href="installment-plain .html">Installment Policy</a></li>
+              </ul>
+              <ul>
+                <li><a href="sofa-policy (1).html">Sofa Care & Warranty Policy</a></li>
+              </ul>
+
+            </div>
+
+          </div>
+          <div class="cent">
+            <div class="one">
+
+              <div class="new">OXFORD SOFA'S</div>
+              <ul></ul>
+              <div class="f-text">
+                <ul>
+                  <li><a href=""> <img class="insta" src="images/land-location.png" alt=""> OXFORD SOFA'S Head
+                      Office: 4th Floor, Philip Markaz, <P>Opposite Gul Plaza, M.A. Jinnah Road, Karachi.
+                      </P></a></li>
+                </ul>
+                <ul>
+                  <li><a href="">
+                      <img class="insta" src="images/phone-call.png" alt=""> : 021 111 178 762 (10am - 5pm)</a>
+                  </li>
+                </ul>
+
+                <ul>
+                  <li><a href=""><img class="insta" src="images/whatsapp.png" alt=""> : +923217876200</a></li>
+                </ul>
+                <ul>
+                  <li><a href=""> <img class="insta" src="images/envelope-dot.png" alt=""> : info@oxfordsofa.pk<P>
+                        :sales@oxfordsofa.pk</P></a></li>
+                </ul>
+              </div>
+
+
+            </div>
+          </div>
+
+          <!-- <div class="two">MY ACCOUNT</div>
+        <div class="three">POLICY</div>
+        <div class="four">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus, quos!</div> -->
+        </div>
+      </div>
+      <div class="last">
+        <div class="oneL">
+          <p>USEFUL SOFA SET CATEGORIES</p>
+        </div>
+        <div class="twoL">Discover the perfect sofa for every need with our thoughtfully organized sofa categories.
+          Whether
+          you're looking for spacious sectional sofas for family gatherings, compact loveseats for small spaces, or
+          recliners for added comfort, our Oxford Sofa Collection offers a variety of styles to suit your lifestyle.
+          Explore
+          our curated categories to find functional, stylish, and durable seating solutions tailored to your home.</div>
+      </div>
+
+      <div class="last">
+        <div class="threeL">
+          <p>SHOP FURNITURE BY ROOM</p>
+        </div>
+        <div class="fourL">
+          <p>Transform every corner of your home with our curated selection of furniture, designed to suit every room
+            and
+            every style. Whether you're furnishing a cozy living room, a sophisticated study, or a welcoming guest
+            bedroom,
+            our Oxford Sofa Collection adds timeless elegance and unmatched comfort to your space. Explore room-specific
+            inspiration and discover how the right piece can elevate your home, one room at a time. </p>
+        </div>
+      </div>
+      <div class="last">
+        <div class="fiveL">
+          <p>OFFICE FURNITURE CATEGORIES
+          </p>
+        </div>
+        <div class="sixL">Office Tables , Manager Tables , Executive Tables , Workstations , Reception Counters ,
+          Meeting Tables , Office Chairs , CEO Chairs , High Back Chairs , Ergonomic Chairs , Cafe Chairs , Office
+          Sofas , Office Sofa Set , Office Executive Furniture.</div>
+      </div>
+      <div class="last">
+        <div class="sevenL">
+          <p>WARDROBES & KITCHEN DESIGNS</p>
+        </div>
+        <div class="eightL">Complete your home with beautifully crafted wardrobes and kitchen designs that combine
+          functionality with refined aesthetics. Our custom solutions are designed to complement the timeless charm of
+          the
+          Oxford Sofa, creating a seamless flow throughout your living space. From smart storage options to elegant
+          finishes, each design is tailored to reflect your personal style while enhancing everyday living.</div>
+      </div>
+      <div class="last">
+        <div class="nineL">
+          <p>DELIVERING IN</p>
+        </div>
+        <div class="tenL">Lahore , Islamabad , Karachi.</div>
+      </div>
+    </footer>
+</body>
+
+</html>

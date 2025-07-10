@@ -1,0 +1,187 @@
+
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+.main{
+    height: 90px;
+    width: 100%;
+    background-color: rebeccapurple;
+color: aliceblue;
+}
+.footer{
+    width: 100%;
+    height: 600px;
+    background-color: rgb(0, 0, 0);
+    color: aliceblue;
+    display: inline-block;
+    font-weight: bold;
+        
+    
+    
+}
+.insta{
+    height: 25px;
+    width: 25px;
+}
+.new{
+    font-weight: bolder;
+    font-size: 20px;
+    margin-right: -35px;
+    
+}
+.one{
+    text-align: center;
+
+    height: 500px;
+    
+}
+.cent{
+    margin-right: 40px;
+}
+.top-text-f{
+    font-size: 20px;
+
+    height: 20px;
+}
+.top-f{
+    font-size: 50px;
+    align-items: center;
+    text-align: center;
+    font-weight: bolder;
+    
+}
+.controler{
+    height: 500px;
+
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+.f-text{
+    height: 100px;
+}
+.one ul li  {
+    text-decoration: none;
+    list-style: none;
+    color: aliceblue;
+}
+.one a{
+list-style-type: none;
+color: aliceblue;
+text-decoration: none;
+}
+.bodyz{
+    background-color: aqua;
+    height: 300px;
+}
+ .footer.top-text{
+    font-size: 5px;
+    margin-top: 10px;
+    color: pink;
+}
+.search-container {
+    display: flex;
+    margin: 20px;
+    justify-content: center;
+}
+.search-input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px 0 0 4px;
+    width: 350px;
+    
+}
+.search-btn {
+    padding: 10px 20px;
+    background-color: #ff0000;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+.search-btn:hover {
+    background-color: #9b0202;
+}
+.last{
+    height: 120px;
+    width: 100%;
+    background-color:  rgb(0, 0, 0);
+    color: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+.oneL{
+    width: 25%;
+    background-color:transparent red;
+    height: 120px;
+      
+}
+.oneL P{
+    align-items: center;
+    text-align: center;
+    margin-top: 30px;
+}
+.twoL{
+    width: 75%;
+    background-color:transparent rgb(114, 88, 88);
+    height: 120px;
+}
+.threeL{
+    height: 60px;
+    width: 25%;
+    background-color:transparent rgb(41, 125, 199);
+    
+}
+.threeL p{
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+}
+.fourL{
+    height: 60px;
+    width: 75%;
+    background-color:transparent green;
+    
+}
+.fourL p{
+    margin-top: 20px;
+    
+}
+.fiveL p{
+    align-items: center;
+    text-align: center;
+    margin-top: 12px;
+}
+.sixL{
+    height: 60px;
+    width: 72%;
+    
+}
+.sevenL p{
+    align-items: center;
+    text-align: center;
+    margin-top: 12px;
+}
+.eightL{
+    height: 60px;
+    width: 72%;
+    
+}
+.nineL{
+    align-items: center;
+    text-align: center;
+    margin-top: 22px;
+
+}
+.tenL{
+    height: 20px;
+    width: 68%;
+    background-color:transparent green;
+    margin-top: 20px;
+    
+}
+
